@@ -11,7 +11,6 @@ import subprocess
 import sys
 from pathlib import Path
 
-
 # Should be the folder gatm/
 working_directory: Path = Path(__file__).parent
 build_directory: Path = working_directory / "build"
@@ -77,7 +76,7 @@ def erase_progress_bar():
 
     if progress_bar_length != 0:
         # move up a line and then delete the progress bar
-        sys.stdout.write("\x1B[A" + "\b" * progress_bar_length)
+        sys.stdout.write("\x1b[A" + "\b" * progress_bar_length)
         progress_bar_length = 0
 
 

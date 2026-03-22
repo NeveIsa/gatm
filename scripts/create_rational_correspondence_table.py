@@ -2,7 +2,6 @@
 
 import math
 
-
 TRACK_DUPLICATES = False
 
 
@@ -40,15 +39,13 @@ header = """\\renewcommand*{{\\arraystretch}}{{2}} % stops fractions from collid
 )
 
 footer = """& {vdots} {ddots} \\\\
-\\end{{tabular}}""".format(
-    vdots="$\\vdots{}$ &" * (cols + 1), ddots="$\\ddots{}$"
-)
+\\end{{tabular}}""".format(vdots="$\\vdots{}$ &" * (cols + 1), ddots="$\\ddots{}$")
 
 
 table_array = [["" for i in range(cols + 3)] for j in range(rows)]
 
 for triplet in generate_correspondence(2 * max(rows, cols) + 1):
-    (num, den, nat) = triplet
+    num, den, nat = triplet
     # print(triplet, num, cols, den, rows) DEBUG
 
     if num < cols and den <= rows:
